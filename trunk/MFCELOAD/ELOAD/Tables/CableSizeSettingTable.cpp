@@ -1,0 +1,165 @@
+#include "StdAfx.h"
+#include "../ELoad.h"
+#include "CableSizeSettingTable.h"
+#include "../ELoadDocData.h"
+#include <util/ado/SQLFile.h>
+
+using namespace TABLES;
+
+CCableSizeSettingTable::CCableSizeSettingTable(void)
+{
+}
+
+CCableSizeSettingTable::~CCableSizeSettingTable(void)
+{
+}
+
+CCableSizeSettingTable& CCableSizeSettingTable::GetInstance()
+{
+	static CCableSizeSettingTable __INSTANCE__;
+
+	return __INSTANCE__;
+}
+
+/**
+	@brief	load Cable Size Setting Table.
+
+	@author	HumKyung
+
+	@date	????.??.??
+
+	@param
+
+	@return	int
+*/
+int CCableSizeSettingTable::Load()
+{
+	static bool __ALREADY_LOADED__ = false;
+
+	if(false == __ALREADY_LOADED__)
+	{
+		CELoadDocData& docData    = CELoadDocData::GetInstance();
+		//! MDB CONNECT
+		string rProjectMDBFilePath = docData.GetProjectMDBFilePath();
+
+		CADODB adoDB;
+		const STRING_T rDBPath = STRING_T(PROVIDER) + _T("Data Source=") + rProjectMDBFilePath + DB_PASSWORD;
+		if(TRUE == adoDB.DBConnect(rDBPath))
+		{
+			STRING_T rQuery(_T("SELECT * FROM T_CABLE_SIZING_SETTING"));
+			try
+			{ 
+				adoDB.OpenQuery(rQuery);
+
+				LONG lRecordCount = 0;
+				adoDB.GetRecordCount(&lRecordCount);
+				for(int i = 0;i < lRecordCount;++i)
+				{
+					STRING_T rValue;
+					CCableSizeSettingTable::Record record;
+
+					adoDB.GetFieldValue(i , _T("C_NAME") , &rValue);
+
+					adoDB.GetFieldValue(i , _T("C_BUS_MOTOR_VOLTAGE1") , &(record.m_rBusMotorVoltage[0]));
+					adoDB.GetFieldValue(i , _T("C_BUS_MOTOR_VOLTAGE2") , &(record.m_rBusMotorVoltage[1]));
+
+					adoDB.GetFieldValue(i , _T("C_DERATING_FACTOR") , &(record.m_rDeratingFactor));
+
+					adoDB.GetFieldValue(i , _T("C_VOLTAGE_DROP1") , &(record.m_rVoltageDrop[0]));
+					adoDB.GetFieldValue(i , _T("C_VOLTAGE_DROP2") , &(record.m_rVoltageDrop[1]));
+
+					adoDB.GetFieldValue(i , _T("C_STARTING_VOLTAGE_DROP1") , &(record.m_rStartingVoltageDrop[0]));
+					adoDB.GetFieldValue(i , _T("C_STARTING_VOLTAGE_DROP2") , &(record.m_rStartingVoltageDrop[1]));
+
+					adoDB.GetFieldValue(i , _T("C_STARTING_POWER_FACTOR") , &(record.m_rStartingPowerFactor));
+
+					adoDB.GetFieldValue(i , _T("C_INSULATION_METHOD") , &(record.m_rInsulationMethod));
+
+					adoDB.GetFieldValue(i , _T("C_CABLE_TYPE") , &(record.m_rCableType));
+
+					adoDB.GetFieldValue(i , _T("C_CABLE_DATA_TABLE") , &(record.m_rCableDataTable));
+					adoDB.GetFieldValue(i , _T("C_CONDUIT_TABLE") , &(record.m_rConduitTable));
+					adoDB.GetFieldValue(i , _T("C_CONDUIT_DESC") , &(record.m_rConduitDesc));
+
+					adoDB.GetFieldValue(i , _T("C_MOTOR_TYPE") , &(record.m_rMotorType));
+					adoDB.GetFieldValue(i , _T("C_PF_FOR_FEEDER") , &(record.m_rPFForFeeder));
+
+					adoDB.GetFieldValue(i , _T("C_SELECT_BUS") , &(record.m_rSelectBus));
+
+					m_RecordMap.insert(make_pair(rValue.c_str() , record));
+				}
+
+				if(lRecordCount > 0) __ALREADY_LOADED__ = true;
+			}
+			catch(_com_error &e)
+			{
+				CString rMsg;
+				rMsg.Format("*** DOG CHECK [ADO DB] => <ExecuteQuery 오류> 설명[%s] !! ***\n", (LPCSTR)e.Description());
+				ELOAD_LOG4CXX_WARN(mylogger , "" , 1);
+
+				return ERROR_BAD_ENVIRONMENT;
+			}
+		}
+		else
+		{
+			AfxMessageBox(_T("Fail to connect project database... !"));
+			return ERROR_BAD_ENVIRONMENT;
+		}
+	}
+
+	return ERROR_SUCCESS;
+}
+
+/**
+	@brief	save cable size setting table.
+
+	@author	BHK
+*/
+int CCableSizeSettingTable::Save()
+{
+	CELoadDocData& docData    = CELoadDocData::GetInstance();
+	//! MDB CONNECT
+	string rProjectMDBFilePath = docData.GetProjectMDBFilePath();
+
+	CADODB adoDB;
+	const STRING_T rDBPath = STRING_T(PROVIDER) + _T("Data Source=") + rProjectMDBFilePath + DB_PASSWORD;
+	if(TRUE == adoDB.DBConnect(rDBPath))
+	{
+		adoDB.ExecuteQuery(_T("DROP TABLE T_CABLE_SIZING_SETTING"));	//! 테이블을 삭제한다.
+
+		CString rExecPath = GetExecPath();
+		if("\\" != rExecPath.Right(1)) rExecPath += _T("\\");
+		CString rSqlFilePath = rExecPath + _T("Backup\\T_CABLE_SIZING_SETTING.SQL");
+
+		CSQLFile sqlFile(rSqlFilePath.operator LPCSTR());
+		sqlFile.Parse();
+		string rSql = sqlFile.GetCreateString();
+		if(!rSql.empty()) adoDB.ExecuteQuery(rSql.c_str());
+
+		for(map<CString , CCableSizeSettingTable::Record>::iterator itr = m_RecordMap.begin();itr != m_RecordMap.end();++itr)
+		{
+			rSql = _T("INSERT INTO T_CABLE_SIZING_SETTING(C_NAME,C_BUS_MOTOR_VOLTAGE1,C_BUS_MOTOR_VOLTAGE2,");
+			rSql+= _T("C_DERATING_FACTOR,C_VOLTAGE_DROP1,C_VOLTAGE_DROP2,C_STARTING_VOLTAGE_DROP1,C_STARTING_VOLTAGE_DROP2,");
+			rSql+= _T("C_STARTING_POWER_FACTOR,C_INSULATION_METHOD,C_CABLE_TYPE,C_CABLE_DATA_TABLE,C_CONDUIT_TABLE,");
+			rSql+= _T("C_MOTOR_TYPE,C_PF_FOR_FEEDER, C_SELECT_BUS, C_CONDUIT_DESC) VALUES('");
+			rSql+= itr->first.operator LPCTSTR() + STRING_T(_T("','")) + itr->second.m_rBusMotorVoltage[0] + _T("','") + itr->second.m_rBusMotorVoltage[1] + _T("','");
+			rSql+= itr->second.m_rDeratingFactor + _T("','") + itr->second.m_rVoltageDrop[0] + _T("','") + itr->second.m_rVoltageDrop[1] + _T("','");
+			rSql+= itr->second.m_rStartingVoltageDrop[0] + _T("','") + itr->second.m_rStartingVoltageDrop[1] + _T("','");
+			rSql+= itr->second.m_rStartingPowerFactor + _T("','") + itr->second.m_rInsulationMethod + _T("','") + itr->second.m_rCableType + _T("','");
+			rSql+= itr->second.m_rCableDataTable + _T("','") + itr->second.m_rConduitTable + _T("','");
+			rSql+= itr->second.m_rMotorType + _T("','") + itr->second.m_rPFForFeeder + _T("','") + itr->second.m_rSelectBus + _T("','");
+			rSql+= itr->second.m_rConduitDesc + _T("')");
+
+			adoDB.ExecuteQuery(rSql.c_str());
+		}
+
+		return ERROR_SUCCESS;
+	}
+	else
+	{
+		AfxMessageBox("Fail to connect project database... !");
+		return ERROR_BAD_ENVIRONMENT;
+	}
+
+	return ERROR_BAD_ENVIRONMENT;
+}

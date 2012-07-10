@@ -131,7 +131,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="..\..\..\Is_Tools\inc;..\..\..\Is_Tools\inc\gui;&quot;..\..\log4cxx-0.9.7\include&quot;;&quot;c:\Program Files (x86)\boost\boost_1_47&quot;;C:\Python27\include;&quot;C:\Program Files (x86)\FarPoint Technologies\Spread70\Include&quot;;..\..\..\shared;..\..\..\shared\3rdparty\CxImage600\cximage"
+				AdditionalIncludeDirectories="..\..\..\Is_Tools\inc;..\..\..\Is_Tools\inc\gui;&quot;..\..\log4cxx-0.9.7\include&quot;;&quot;c:\Program Files (x86)\boost\boost_1_47&quot;;C:\Python26\include;&quot;C:\Program Files (x86)\FarPoint Technologies\Spread70\Include&quot;;..\..\..\shared;..\..\..\shared\3rdparty\CxImage600\cximage"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG"
 				MinimalRebuild="false"
 				RuntimeLibrary="2"
@@ -2178,11 +2178,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\res\menuimages_hc.bmp"
+				RelativePath="C:\Program Files\BCGSoft\BCGControlBarPro\Examples\BCGPVisualStudioGUIDemo\res\menuimages_hc.bmp"
 				>
 			</File>
 			<File
-				RelativePath="C:\Program Files\BCGSoft\BCGControlBarPro\Examples\BCGPVisualStudioGUIDemo\res\menuimages_hc.bmp"
+				RelativePath=".\res\menuimages_hc.bmp"
 				>
 			</File>
 			<File

@@ -4170,3 +4170,444 @@ make sure you don't distribute files belonging to the operating system.
    VERSION.dll - C:\Windows\system32\VERSION.dll
    KERNEL32.dll - C:\Windows\system32\KERNEL32.dll
    mfc90.dll - C:\Python26\lib\site-packages\Pythonwin\mfc90.dll
+running py2exe
+running build_scripts
+*** searching for required modules ***
+*** parsing results ***
+creating python loader for extension 'winxpgui' (C:\Python26\lib\site-packages\win32\winxpgui.pyd -> winxpgui.pyd)
+creating python loader for extension 'win32pdh' (C:\Python26\lib\site-packages\win32\win32pdh.pyd -> win32pdh.pyd)
+creating python loader for extension 'select' (C:\Python26\DLLs\select.pyd -> select.pyd)
+creating python loader for extension 'unicodedata' (C:\Python26\DLLs\unicodedata.pyd -> unicodedata.pyd)
+creating python loader for extension 'win32gui' (C:\Python26\lib\site-packages\win32\win32gui.pyd -> win32gui.pyd)
+creating python loader for extension 'win32event' (C:\Python26\lib\site-packages\win32\win32event.pyd -> win32event.pyd)
+creating python loader for extension 'win32help' (C:\Python26\lib\site-packages\win32\win32help.pyd -> win32help.pyd)
+creating python loader for extension 'win32ui' (C:\Python26\lib\site-packages\Pythonwin\win32ui.pyd -> win32ui.pyd)
+creating python loader for extension 'bz2' (C:\Python26\DLLs\bz2.pyd -> bz2.pyd)
+creating python loader for extension '_win32sysloader' (C:\Python26\lib\site-packages\win32\_win32sysloader.pyd -> _win32sysloader.pyd)
+creating python loader for extension 'win32process' (C:\Python26\lib\site-packages\win32\win32process.pyd -> win32process.pyd)
+creating python loader for extension 'win32trace' (C:\Python26\lib\site-packages\win32\win32trace.pyd -> win32trace.pyd)
+creating python loader for extension 'dde' (C:\Python26\lib\site-packages\Pythonwin\dde.pyd -> dde.pyd)
+creating python loader for extension 'win32api' (C:\Python26\lib\site-packages\win32\win32api.pyd -> win32api.pyd)
+creating python loader for extension 'win32clipboard' (C:\Python26\lib\site-packages\win32\win32clipboard.pyd -> win32clipboard.pyd)
+*** finding dlls needed ***
+*** create binaries ***
+*** byte compile python files ***
+skipping byte-compilation of C:\Python26\lib\Queue.py to Queue.pyc
+skipping byte-compilation of C:\Python26\lib\StringIO.py to StringIO.pyc
+skipping byte-compilation of C:\Python26\lib\UserDict.py to UserDict.pyc
+skipping byte-compilation of C:\Python26\lib\__future__.py to __future__.pyc
+skipping byte-compilation of C:\Python26\lib\_abcoll.py to _abcoll.pyc
+skipping byte-compilation of C:\Python26\lib\_strptime.py to _strptime.pyc
+skipping byte-compilation of C:\Python26\lib\_threading_local.py to _threading_local.pyc
+skipping byte-compilation of C:\Python26\lib\abc.py to abc.pyc
+skipping byte-compilation of C:\Python26\lib\atexit.py to atexit.pyc
+skipping byte-compilation of C:\Python26\lib\base64.py to base64.pyc
+skipping byte-compilation of C:\Python26\lib\bdb.py to bdb.pyc
+skipping byte-compilation of C:\Python26\lib\bisect.py to bisect.pyc
+skipping byte-compilation of C:\Python26\lib\calendar.py to calendar.pyc
+skipping byte-compilation of C:\Python26\lib\cmd.py to cmd.pyc
+skipping byte-compilation of C:\Python26\lib\code.py to code.pyc
+skipping byte-compilation of C:\Python26\lib\codecs.py to codecs.pyc
+skipping byte-compilation of C:\Python26\lib\codeop.py to codeop.pyc
+skipping byte-compilation of C:\Python26\lib\collections.py to collections.pyc
+skipping byte-compilation of C:\Python26\lib\copy.py to copy.pyc
+skipping byte-compilation of C:\Python26\lib\copy_reg.py to copy_reg.pyc
+skipping byte-compilation of C:\Python26\lib\decimal.py to decimal.pyc
+skipping byte-compilation of C:\Python26\lib\difflib.py to difflib.pyc
+skipping byte-compilation of C:\Python26\lib\dis.py to dis.pyc
+skipping byte-compilation of C:\Python26\lib\distutils\__init__.py to distutils\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\distutils\dep_util.py to distutils\dep_util.pyc
+skipping byte-compilation of C:\Python26\lib\distutils\errors.py to distutils\errors.pyc
+skipping byte-compilation of C:\Python26\lib\distutils\sysconfig.py to distutils\sysconfig.pyc
+skipping byte-compilation of C:\Python26\lib\distutils\text_file.py to distutils\text_file.pyc
+skipping byte-compilation of C:\Python26\lib\doctest.py to doctest.pyc
+skipping byte-compilation of C:\Python26\lib\dummy_thread.py to dummy_thread.pyc
+skipping byte-compilation of C:\Python26\lib\dummy_threading.py to dummy_threading.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\__init__.py to encodings\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\aliases.py to encodings\aliases.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\ascii.py to encodings\ascii.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\base64_codec.py to encodings\base64_codec.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\big5.py to encodings\big5.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\big5hkscs.py to encodings\big5hkscs.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\bz2_codec.py to encodings\bz2_codec.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\charmap.py to encodings\charmap.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp037.py to encodings\cp037.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp1006.py to encodings\cp1006.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp1026.py to encodings\cp1026.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp1140.py to encodings\cp1140.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp1250.py to encodings\cp1250.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp1251.py to encodings\cp1251.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp1252.py to encodings\cp1252.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp1253.py to encodings\cp1253.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp1254.py to encodings\cp1254.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp1255.py to encodings\cp1255.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp1256.py to encodings\cp1256.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp1257.py to encodings\cp1257.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp1258.py to encodings\cp1258.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp424.py to encodings\cp424.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp437.py to encodings\cp437.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp500.py to encodings\cp500.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp737.py to encodings\cp737.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp775.py to encodings\cp775.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp850.py to encodings\cp850.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp852.py to encodings\cp852.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp855.py to encodings\cp855.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp856.py to encodings\cp856.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp857.py to encodings\cp857.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp860.py to encodings\cp860.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp861.py to encodings\cp861.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp862.py to encodings\cp862.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp863.py to encodings\cp863.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp864.py to encodings\cp864.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp865.py to encodings\cp865.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp866.py to encodings\cp866.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp869.py to encodings\cp869.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp874.py to encodings\cp874.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp875.py to encodings\cp875.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp932.py to encodings\cp932.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp949.py to encodings\cp949.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\cp950.py to encodings\cp950.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\euc_jis_2004.py to encodings\euc_jis_2004.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\euc_jisx0213.py to encodings\euc_jisx0213.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\euc_jp.py to encodings\euc_jp.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\euc_kr.py to encodings\euc_kr.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\gb18030.py to encodings\gb18030.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\gb2312.py to encodings\gb2312.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\gbk.py to encodings\gbk.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\hex_codec.py to encodings\hex_codec.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\hp_roman8.py to encodings\hp_roman8.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\hz.py to encodings\hz.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\idna.py to encodings\idna.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso2022_jp.py to encodings\iso2022_jp.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso2022_jp_1.py to encodings\iso2022_jp_1.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso2022_jp_2.py to encodings\iso2022_jp_2.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso2022_jp_2004.py to encodings\iso2022_jp_2004.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso2022_jp_3.py to encodings\iso2022_jp_3.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso2022_jp_ext.py to encodings\iso2022_jp_ext.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso2022_kr.py to encodings\iso2022_kr.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_1.py to encodings\iso8859_1.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_10.py to encodings\iso8859_10.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_11.py to encodings\iso8859_11.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_13.py to encodings\iso8859_13.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_14.py to encodings\iso8859_14.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_15.py to encodings\iso8859_15.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_16.py to encodings\iso8859_16.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_2.py to encodings\iso8859_2.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_3.py to encodings\iso8859_3.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_4.py to encodings\iso8859_4.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_5.py to encodings\iso8859_5.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_6.py to encodings\iso8859_6.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_7.py to encodings\iso8859_7.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_8.py to encodings\iso8859_8.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\iso8859_9.py to encodings\iso8859_9.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\johab.py to encodings\johab.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\koi8_r.py to encodings\koi8_r.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\koi8_u.py to encodings\koi8_u.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\latin_1.py to encodings\latin_1.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\mac_arabic.py to encodings\mac_arabic.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\mac_centeuro.py to encodings\mac_centeuro.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\mac_croatian.py to encodings\mac_croatian.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\mac_cyrillic.py to encodings\mac_cyrillic.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\mac_farsi.py to encodings\mac_farsi.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\mac_greek.py to encodings\mac_greek.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\mac_iceland.py to encodings\mac_iceland.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\mac_latin2.py to encodings\mac_latin2.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\mac_roman.py to encodings\mac_roman.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\mac_romanian.py to encodings\mac_romanian.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\mac_turkish.py to encodings\mac_turkish.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\mbcs.py to encodings\mbcs.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\palmos.py to encodings\palmos.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\ptcp154.py to encodings\ptcp154.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\punycode.py to encodings\punycode.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\quopri_codec.py to encodings\quopri_codec.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\raw_unicode_escape.py to encodings\raw_unicode_escape.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\rot_13.py to encodings\rot_13.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\shift_jis.py to encodings\shift_jis.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\shift_jis_2004.py to encodings\shift_jis_2004.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\shift_jisx0213.py to encodings\shift_jisx0213.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\string_escape.py to encodings\string_escape.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\tis_620.py to encodings\tis_620.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\undefined.py to encodings\undefined.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\unicode_escape.py to encodings\unicode_escape.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\unicode_internal.py to encodings\unicode_internal.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\utf_16.py to encodings\utf_16.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\utf_16_be.py to encodings\utf_16_be.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\utf_16_le.py to encodings\utf_16_le.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\utf_32.py to encodings\utf_32.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\utf_32_be.py to encodings\utf_32_be.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\utf_32_le.py to encodings\utf_32_le.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\utf_7.py to encodings\utf_7.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\utf_8.py to encodings\utf_8.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\utf_8_sig.py to encodings\utf_8_sig.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\uu_codec.py to encodings\uu_codec.pyc
+skipping byte-compilation of C:\Python26\lib\encodings\zlib_codec.py to encodings\zlib_codec.pyc
+skipping byte-compilation of C:\Python26\lib\fnmatch.py to fnmatch.pyc
+skipping byte-compilation of C:\Python26\lib\functools.py to functools.pyc
+skipping byte-compilation of C:\Python26\lib\genericpath.py to genericpath.pyc
+skipping byte-compilation of C:\Python26\lib\getopt.py to getopt.pyc
+skipping byte-compilation of C:\Python26\lib\gettext.py to gettext.pyc
+skipping byte-compilation of C:\Python26\lib\glob.py to glob.pyc
+skipping byte-compilation of C:\Python26\lib\heapq.py to heapq.pyc
+skipping byte-compilation of C:\Python26\lib\inspect.py to inspect.pyc
+skipping byte-compilation of C:\Python26\lib\keyword.py to keyword.pyc
+skipping byte-compilation of C:\Python26\lib\linecache.py to linecache.pyc
+skipping byte-compilation of C:\Python26\lib\locale.py to locale.pyc
+skipping byte-compilation of C:\Python26\lib\logging\__init__.py to logging\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\new.py to new.pyc
+skipping byte-compilation of C:\Python26\lib\ntpath.py to ntpath.pyc
+skipping byte-compilation of C:\Python26\lib\opcode.py to opcode.pyc
+skipping byte-compilation of C:\Python26\lib\optparse.py to optparse.pyc
+skipping byte-compilation of C:\Python26\lib\os.py to os.pyc
+skipping byte-compilation of C:\Python26\lib\os2emxpath.py to os2emxpath.pyc
+skipping byte-compilation of C:\Python26\lib\pdb.py to pdb.pyc
+skipping byte-compilation of C:\Python26\lib\pickle.py to pickle.pyc
+skipping byte-compilation of C:\Python26\lib\posixpath.py to posixpath.pyc
+skipping byte-compilation of C:\Python26\lib\pprint.py to pprint.pyc
+skipping byte-compilation of C:\Python26\lib\py_compile.py to py_compile.pyc
+skipping byte-compilation of C:\Python26\lib\pyclbr.py to pyclbr.pyc
+skipping byte-compilation of C:\Python26\lib\quopri.py to quopri.pyc
+skipping byte-compilation of C:\Python26\lib\random.py to random.pyc
+skipping byte-compilation of C:\Python26\lib\re.py to re.pyc
+skipping byte-compilation of C:\Python26\lib\repr.py to repr.pyc
+skipping byte-compilation of C:\Python26\lib\shlex.py to shlex.pyc
+skipping byte-compilation of C:\Python26\lib\shutil.py to shutil.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\__init__.py to pywin\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\debugger\__init__.py to pywin\debugger\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\debugger\configui.py to pywin\debugger\configui.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\debugger\dbgcon.py to pywin\debugger\dbgcon.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\debugger\dbgpyapp.py to pywin\debugger\dbgpyapp.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\debugger\debugger.py to pywin\debugger\debugger.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\dialogs\__init__.py to pywin\dialogs\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\dialogs\ideoptions.py to pywin\dialogs\ideoptions.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\dialogs\list.py to pywin\dialogs\list.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\dialogs\status.py to pywin\dialogs\status.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\docking\DockingBar.py to pywin\docking\DockingBar.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\docking\__init__.py to pywin\docking\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\__init__.py to pywin\framework\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\app.py to pywin\framework\app.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\cmdline.py to pywin\framework\cmdline.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\dbgcommands.py to pywin\framework\dbgcommands.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\editor\ModuleBrowser.py to pywin\framework\editor\ModuleBrowser.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\editor\__init__.py to pywin\framework\editor\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\editor\color\__init__.py to pywin\framework\editor\color\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\editor\color\coloreditor.py to pywin\framework\editor\color\coloreditor.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\editor\configui.py to pywin\framework\editor\configui.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\editor\document.py to pywin\framework\editor\document.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\editor\frame.py to pywin\framework\editor\frame.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\editor\template.py to pywin\framework\editor\template.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\help.py to pywin\framework\help.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\interact.py to pywin\framework\interact.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\intpyapp.py to pywin\framework\intpyapp.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\intpydde.py to pywin\framework\intpydde.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\scriptutils.py to pywin\framework\scriptutils.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\toolmenu.py to pywin\framework\toolmenu.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\window.py to pywin\framework\window.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\framework\winout.py to pywin\framework\winout.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\mfc\__init__.py to pywin\mfc\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\mfc\afxres.py to pywin\mfc\afxres.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\mfc\dialog.py to pywin\mfc\dialog.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\mfc\docview.py to pywin\mfc\docview.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\mfc\object.py to pywin\mfc\object.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\mfc\thread.py to pywin\mfc\thread.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\mfc\window.py to pywin\mfc\window.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\scintilla\IDLEenvironment.py to pywin\scintilla\IDLEenvironment.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\scintilla\__init__.py to pywin\scintilla\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\scintilla\bindings.py to pywin\scintilla\bindings.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\scintilla\config.py to pywin\scintilla\config.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\scintilla\configui.py to pywin\scintilla\configui.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\scintilla\control.py to pywin\scintilla\control.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\scintilla\document.py to pywin\scintilla\document.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\scintilla\find.py to pywin\scintilla\find.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\scintilla\formatter.py to pywin\scintilla\formatter.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\scintilla\keycodes.py to pywin\scintilla\keycodes.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\scintilla\scintillacon.py to pywin\scintilla\scintillacon.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\scintilla\view.py to pywin\scintilla\view.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\tools\__init__.py to pywin\tools\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\tools\browser.py to pywin\tools\browser.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\Pythonwin\pywin\tools\hierlist.py to pywin\tools\hierlist.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\pythoncom.py to pythoncom.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32\lib\afxres.py to afxres.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32\lib\commctrl.py to commctrl.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32\lib\pywin32_testutil.py to pywin32_testutil.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32\lib\pywintypes.py to pywintypes.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32\lib\regutil.py to regutil.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32\lib\win32con.py to win32con.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32\lib\win32pdhutil.py to win32pdhutil.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32\lib\win32timezone.py to win32timezone.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32\lib\win32traceutil.py to win32traceutil.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32\lib\winerror.py to winerror.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\__init__.py to win32com\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\client\CLSIDToClass.py to win32com\client\CLSIDToClass.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\client\__init__.py to win32com\client\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\client\build.py to win32com\client\build.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\client\combrowse.py to win32com\client\combrowse.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\client\connect.py to win32com\client\connect.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\client\dynamic.py to win32com\client\dynamic.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\client\gencache.py to win32com\client\gencache.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\client\genpy.py to win32com\client\genpy.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\client\makepy.py to win32com\client\makepy.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\client\selecttlb.py to win32com\client\selecttlb.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\client\tlbrowse.py to win32com\client\tlbrowse.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\client\util.py to win32com\client\util.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\decimal_23.py to win32com\decimal_23.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\demos\__init__.py to win32com\demos\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\demos\connect.py to win32com\demos\connect.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\demos\dump_clipboard.py to win32com\demos\dump_clipboard.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\demos\eventsApartmentThreaded.py to win32com\demos\eventsApartmentThreaded.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\demos\eventsFreeThreaded.py to win32com\demos\eventsFreeThreaded.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\demos\excelAddin.py to win32com\demos\excelAddin.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\demos\excelRTDServer.py to win32com\demos\excelRTDServer.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\demos\iebutton.py to win32com\demos\iebutton.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\demos\ietoolbar.py to win32com\demos\ietoolbar.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\demos\outlookAddin.py to win32com\demos\outlookAddin.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\demos\trybag.py to win32com\demos\trybag.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\AppEvents.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\AppEvents.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Application.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Application.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\DocEvents.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\DocEvents.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Font.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Font.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Interior.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Interior.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Range.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Range.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Sheets.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Sheets.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Workbook.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Workbook.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\WorkbookEvents.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\WorkbookEvents.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Workbooks.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Workbooks.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Worksheet.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\Worksheet.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\_Application.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\_Application.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\_Workbook.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\_Workbook.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\_Worksheet.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\_Worksheet.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\__init__.py to win32com\gen_py\00020813-0000-0000-C000-000000000046x0x1x7\__init__.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\052DB09C-95F7-43BD-B7F8-492373D1151Ex0x1x0\BinaryImage.py to win32com\gen_py\052DB09C-95F7-43BD-B7F8-492373D1151Ex0x1x0\BinaryImage.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\052DB09C-95F7-43BD-B7F8-492373D1151Ex0x1x0\DOT.py to win32com\gen_py\052DB09C-95F7-43BD-B7F8-492373D1151Ex0x1x0\DOT.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\052DB09C-95F7-43BD-B7F8-492373D1151Ex0x1x0\IBinaryImage.py to win32com\gen_py\052DB09C-95F7-43BD-B7F8-492373D1151Ex0x1x0\IBinaryImage.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\052DB09C-95F7-43BD-B7F8-492373D1151Ex0x1x0\IDOT.py to win32com\gen_py\052DB09C-95F7-43BD-B7F8-492373D1151Ex0x1x0\IDOT.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\052DB09C-95F7-43BD-B7F8-492373D1151Ex0x1x0\__init__.py to win32com\gen_py\052DB09C-95F7-43BD-B7F8-492373D1151Ex0x1x0\__init__.pyc
+byte-compiling C:\Python26\lib\site-packages\win32com\gen_py\__init__.py to win32com\gen_py\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\makegw\__init__.py to win32com\makegw\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\makegw\makegw.py to win32com\makegw\makegw.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\makegw\makegwenum.py to win32com\makegw\makegwenum.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\makegw\makegwparse.py to win32com\makegw\makegwparse.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\olectl.py to win32com\olectl.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\server\__init__.py to win32com\server\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\server\connect.py to win32com\server\connect.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\server\dispatcher.py to win32com\server\dispatcher.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\server\exception.py to win32com\server\exception.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\server\factory.py to win32com\server\factory.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\server\localserver.py to win32com\server\localserver.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\server\policy.py to win32com\server\policy.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\server\register.py to win32com\server\register.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\server\util.py to win32com\server\util.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\servers\PythonTools.py to win32com\servers\PythonTools.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\servers\__init__.py to win32com\servers\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\servers\dictionary.py to win32com\servers\dictionary.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\servers\interp.py to win32com\servers\interp.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\servers\perfmon.py to win32com\servers\perfmon.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\servers\test_pycomtest.py to win32com\servers\test_pycomtest.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\storagecon.py to win32com\storagecon.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\GenTestScripts.py to win32com\test\GenTestScripts.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\__init__.py to win32com\test\__init__.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\daodump.py to win32com\test\daodump.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\errorSemantics.py to win32com\test\errorSemantics.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\pippo_server.py to win32com\test\pippo_server.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\policySemantics.py to win32com\test\policySemantics.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testADOEvents.py to win32com\test\testADOEvents.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testAXScript.py to win32com\test\testAXScript.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testAccess.py to win32com\test\testAccess.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testArrays.py to win32com\test\testArrays.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testClipboard.py to win32com\test\testClipboard.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testCollections.py to win32com\test\testCollections.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testDCOM.py to win32com\test\testDCOM.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testDictionary.py to win32com\test\testDictionary.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testDynamic.py to win32com\test\testDynamic.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testExchange.py to win32com\test\testExchange.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testExplorer.py to win32com\test\testExplorer.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testGIT.py to win32com\test\testGIT.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testGatewayAddresses.py to win32com\test\testGatewayAddresses.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testIterators.py to win32com\test\testIterators.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testMSOffice.py to win32com\test\testMSOffice.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testMSOfficeEvents.py to win32com\test\testMSOfficeEvents.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testMarshal.py to win32com\test\testMarshal.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testNetscape.py to win32com\test\testNetscape.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testPersist.py to win32com\test\testPersist.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testPippo.py to win32com\test\testPippo.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testPyComTest.py to win32com\test\testPyComTest.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testROT.py to win32com\test\testROT.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testServers.py to win32com\test\testServers.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testShell.py to win32com\test\testShell.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testStorage.py to win32com\test\testStorage.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testStreams.py to win32com\test\testStreams.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testWMI.py to win32com\test\testWMI.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testall.py to win32com\test\testall.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testmakepy.py to win32com\test\testmakepy.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testvb.py to win32com\test\testvb.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testvbscript_regexp.py to win32com\test\testvbscript_regexp.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\testxslt.py to win32com\test\testxslt.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\test\util.py to win32com\test\util.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\universal.py to win32com\universal.pyc
+skipping byte-compilation of C:\Python26\lib\site-packages\win32com\util.py to win32com\util.pyc
+skipping byte-compilation of C:\Python26\lib\sre.py to sre.pyc
+skipping byte-compilation of C:\Python26\lib\sre_compile.py to sre_compile.pyc
+skipping byte-compilation of C:\Python26\lib\sre_constants.py to sre_constants.pyc
+skipping byte-compilation of C:\Python26\lib\sre_parse.py to sre_parse.pyc
+skipping byte-compilation of C:\Python26\lib\stat.py to stat.pyc
+skipping byte-compilation of C:\Python26\lib\string.py to string.pyc
+skipping byte-compilation of C:\Python26\lib\stringprep.py to stringprep.pyc
+skipping byte-compilation of C:\Python26\lib\struct.py to struct.pyc
+skipping byte-compilation of C:\Python26\lib\subprocess.py to subprocess.pyc
+skipping byte-compilation of C:\Python26\lib\tempfile.py to tempfile.pyc
+skipping byte-compilation of C:\Python26\lib\textwrap.py to textwrap.pyc
+skipping byte-compilation of C:\Python26\lib\threading.py to threading.pyc
+skipping byte-compilation of C:\Python26\lib\token.py to token.pyc
+skipping byte-compilation of C:\Python26\lib\tokenize.py to tokenize.pyc
+skipping byte-compilation of C:\Python26\lib\traceback.py to traceback.pyc
+skipping byte-compilation of C:\Python26\lib\types.py to types.pyc
+skipping byte-compilation of C:\Python26\lib\unittest.py to unittest.pyc
+skipping byte-compilation of C:\Python26\lib\warnings.py to warnings.pyc
+skipping byte-compilation of C:\Python26\lib\zipfile.py to zipfile.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\_win32sysloader.py to _win32sysloader.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\bz2.py to bz2.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\dde.py to dde.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\select.py to select.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\unicodedata.py to unicodedata.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\win32api.py to win32api.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\win32clipboard.py to win32clipboard.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\win32event.py to win32event.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\win32gui.py to win32gui.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\win32help.py to win32help.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\win32pdh.py to win32pdh.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\win32process.py to win32process.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\win32trace.py to win32trace.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\win32ui.py to win32ui.pyc
+byte-compiling D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\build\bdist.win32\winexe\temp\winxpgui.py to winxpgui.pyc
+*** copy extensions ***
+*** copy dlls ***
+copying C:\Windows\system32\API-MS-Win-Core-LocalRegistry-L1-1-0.dll -> D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\dist
+copying C:\Windows\system32\API-MS-Win-Core-ProcessThreads-L1-1-0.dll -> D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\dist
+copying C:\Windows\system32\API-MS-Win-Security-Base-L1-1-0.dll -> D:\Project\SolutionWare\Projects\e-load\MFCELOAD\ELOAD\Bin\python\dist
+The following modules appear to be missing
+['_thread', 'netscape', 'win32com.axcontrol', 'win32com.axscript', 'win32com.axscript.client', 'win32com.shell', 'win32com.shell.shell', 'win32com.shell.shellcon', 'win32com.test.Generated4Test.msword8', 'xl5en32']
+
+*** binary dependencies ***
+Your executable(s) also depend on these dlls which are not included,
+you may or may not need to distribute them.
+
+Make sure you have the license if you distribute any of them, and
+make sure you don't distribute files belonging to the operating system.
+
+   OLEAUT32.dll - C:\Windows\system32\OLEAUT32.dll
+   USER32.dll - C:\Windows\system32\USER32.dll
+   SHELL32.dll - C:\Windows\system32\SHELL32.dll
+   ole32.dll - C:\Windows\system32\ole32.dll
+   COMDLG32.dll - C:\Windows\system32\COMDLG32.dll
+   WSOCK32.dll - C:\Windows\system32\WSOCK32.dll
+   COMCTL32.dll - C:\Windows\system32\COMCTL32.dll
+   ADVAPI32.dll - C:\Windows\system32\ADVAPI32.dll
+   msvcrt.dll - C:\Windows\system32\msvcrt.dll
+   WINSPOOL.DRV - C:\Windows\system32\WINSPOOL.DRV
+   GDI32.dll - C:\Windows\system32\GDI32.dll
+   RPCRT4.dll - C:\Windows\system32\RPCRT4.dll
+   VERSION.dll - C:\Windows\system32\VERSION.dll
+   KERNEL32.dll - C:\Windows\system32\KERNEL32.dll
+   mfc90.dll - C:\Python26\lib\site-packages\Pythonwin\mfc90.dll
+   SETUPAPI.dll - C:\Windows\system32\SETUPAPI.dll
+   KERNELBASE.dll - C:\Windows\system32\KERNELBASE.dll
+   ntdll.dll - C:\Windows\system32\ntdll.dll

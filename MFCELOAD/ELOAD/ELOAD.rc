@@ -4398,8 +4398,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,1,0,354
- PRODUCTVERSION 1,1,0,354
+ FILEVERSION 1,1,3,359
+ PRODUCTVERSION 1,1,3,359
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -4414,14 +4414,14 @@ BEGIN
     BEGIN
         BLOCK "409004e4"
         BEGIN
-            VALUE "CompanyName", "9SQ(c)"
+            VALUE "CompanyName", "Daelim(c)"
             VALUE "FileDescription", "ELOAD.exe"
-            VALUE "FileVersion", "1,1,0,354\0"
+            VALUE "FileVersion", "1, 1, 3, 359"
             VALUE "InternalName", "ELoad.exe"
-            VALUE "LegalCopyright", "9SQ(c).  All rights reserved."
+            VALUE "LegalCopyright", "Daelim(c).  All rights reserved."
             VALUE "OriginalFilename", "ELoad.exe"
             VALUE "ProductName", "ELOAD"
-            VALUE "ProductVersion", "1,1,0,354\0"
+            VALUE "ProductVersion", "1, 1, 3, 359"
         END
     END
     BLOCK "VarFileInfo"

@@ -1,0 +1,85 @@
+
+Bus Connection,0,0,SHOW NONE,NONE,NONE
+{
+	Bus / Bus To Bus,1,1,SHOW BUS,BUS,Bus Item
+	{
+	}
+	Transformer,1,1,SHOW TRANSFORMER,TRANSFORMER,Transformer Item
+	{
+	}
+	UPS/DC,1,1,SHOW UPSDC,UPSDC,UPS/DC Item
+	{
+	}
+}
+Loads,0,0,SHOW NONE,NONE,NONE
+{
+	By Bus,1,1,SHOW LOAD,NONE,NONE
+	{
+	}
+	By SubBus,1,1,SHOW PDB,NONE,NONE
+	{
+	}
+	NONE,1,1,SHOW NOT ASSIGNED LOAD,NONE,NONE
+	By Area,1,1,SHOW AREA,NONE,NONE
+}
+Equipment Sizing,0,0,SHOW NONE,NONE,NONE
+{
+	Capacitor,1,1,SHOW CAPACITOR,CAPACITOR,Capacitor Item
+	{
+	}
+	DEG,1,1,SHOW GENERATOR,GENERATOR,Generator Item
+	{
+	}
+}
+Calculation Result,0,0,SHOW CALCULATION,NONE,NONE
+{
+	Load Summary-Bus,1,1,SHOW ALL BUS LOAD SUMMARY,NONE,NONE
+	{
+	}
+	Load Summary-SubBus,1,1,SHOW ALL PDB LOAD SUMMARY,NONE,NONE
+	{
+	}
+	Transformer Sizing,1,1,SHOW TRANSFORMER SIZING,NONE,NONE
+	{
+	}
+	LV Cable Sizing Table,1,1,SHOW CABLE SIZING TABLE,NONE,NONE
+	{
+	}
+	Load List-SLD,1,1,SHOW LOAD LIST-SLD,NONE,NONE
+	{
+	}
+} 
+Schematic,0,0,SHOW NONE,NONE,NONE
+{ 
+	Schematic,1,1,SHOW SCHEMATIC,SCHEMATIC,Schematic Item
+	{
+	}
+	IO,1,1,SHOW IO,IO,IO Item
+	{
+	}
+	LCS,1,1,SHOW LCS,LCS,LCS Item
+	{
+	}
+}
+Cable,0,0,SHOW NONE,NONE,NONE
+{
+	Auto Power Cable,1,1,SHOW POWER CABLE,CABLE,Auto Power Cable Item
+	{
+	}
+	Auto Control Cable,1,1,SHOW CONTROL CABLE,CABLE,Auto Control Cable Item
+	{
+	}
+	User Cable,1,1,SHOW USER CABLE,CABLE,User Cable Item
+	{
+	}
+	Cable Schedule,1,1,SHOW CABLE SCHEDULE,NONE,NONE
+	{
+	}
+	Drum Schedule,1,1,SHOW DRUM SCHEDULE,NONE,NONE
+	{
+	}
+	Cable Route,1,1,SHOW CABLE ROUTE,ROUTE,Route Item
+	{
+	}
+}
+

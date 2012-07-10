@@ -60,7 +60,6 @@
 #include "pyfromc.h"
 #include <util/Registry.h>
 #include <locale>
-///#include <CrashRpt.h>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -150,7 +149,6 @@ BOOL CELOADApp::InitInstance()
 		docData.SetServerFolderPath( rServerFolderPath.operator LPCSTR() );
 	}else	return FALSE;
 
-#ifdef	NDEBUG
 	// SplashScreen
 	CSplashScreenFx *pSplash = new CSplashScreenFx();
 	if(pSplash)
@@ -165,7 +163,7 @@ BOOL CELOADApp::InitInstance()
 		pSplash->Show();	
 		pSplash->SetActiveWindow();
 	}
-#endif
+
 	python.startup();
 
 	log4cxx::LayoutPtr layout(new CELoadLayout());

@@ -5,10 +5,6 @@
 #include "ELOAD.h"
 #include "MainFrm.h"
 #include <gui/GridCtrl/GridCellCheck.h>
-///#include "BusToBusRelation.h"
-///#include "BusToBusRelationController.h"
-///#include "BusToBusRelationDraw.h"
-///#include "BusToBusRelationFactory.h"
 #include "ELoadDocData.h"
 
 #include "BusDiagramChildFrame.h"
@@ -17,7 +13,6 @@
 #define	BUTTON_HEIGHT	32
 #define	BUTTON_WIDTH	80
 
-///using namespace BusToBus;
 /////////////////////////////////////////////////////////////////////////////
 // CGridCellControlTypeCombo 
 /////////////////////////////////////////////////////////////////////////////
@@ -128,8 +123,11 @@ BOOL CGridCellBusCombo::Edit(int nRow, int nCol, CRect rect, CPoint point , UINT
 			}
 			//!
 
-			const string sName = (*itr)->GetName();
-			m_Strings.Add(sName.c_str());
+			const STRING_T sName = (*itr)->GetName();
+			if(this->m_sFromBus != sName.c_str())	/// add if it's not from bus - 2012.07.10 added by humkyung
+			{
+				m_Strings.Add(sName.c_str());
+			}
 		}
 	}
 	CGridCellCombo::Edit(nRow , nCol , rect , point , nID , nChar);
@@ -364,7 +362,10 @@ void CBusToBusView::OnInitialUpdate()
 
 	if(NULL == m_wndSaveButton.GetSafeHwnd())
 	{
-		if(TRUE == m_wndSaveButton.Create(_T("Save") , WS_CHILD | WS_VISIBLE , rect , this , ID_TOOL_SAVE_BUS_TO_BUS_RELATION)){}
+		if(TRUE == m_wndSaveButton.Create(_T("Save") , WS_CHILD | WS_VISIBLE , rect , this , ID_TOOL_SAVE_BUS_TO_BUS_RELATION))
+		{
+			m_wndSaveButton.SetIcon(IDI_SAVE);
+		}
 	}
 }
 
@@ -600,4 +601,46 @@ void CBusToBusView::OnDestroy()
 	WritePrivateProfileString(_T("ELoad") , _T("BusToBus_Width") , sWidth , sIniFilePath);
 
 	CView::OnDestroy();
+}
+
+/******************************************************************************
+    @author     humkyung
+    @date       2012-07-10
+    @class      CBusToBusView
+    @function   OnNotify
+    @return     BOOL
+    @param      WPARAM      wParam
+    @param      LPARAM      lParam
+    @param      LRESULT*    pResult
+    @brief
+******************************************************************************/
+BOOL CBusToBusView::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult)
+{
+	if(wParam == m_wndGridCtrl.GetDlgCtrlID())
+	{
+		NM_GRIDVIEW* pGridView = (NM_GRIDVIEW*)(lParam);
+
+		if((GVN_ENDLABELEDIT == pGridView->hdr.code) && (1 == pGridView->iColumn))
+		{
+			CGridCellBase* pCell = m_wndGridCtrl.GetCell(pGridView->iRow, pGridView->iColumn);
+			CString sFromBus = pCell->GetText();
+
+			CGridCellBusCombo* pBusCombo = (CGridCellBusCombo*)m_wndGridCtrl.GetCell(pGridView->iRow, pGridView->iColumn + 1);
+			CString sToBus = pBusCombo->GetText();
+
+			if(sFromBus == sToBus)
+			{
+				AfxMessageBox(_T("From and To Bus are same") , MB_OK | MB_ICONWARNING);
+				m_wndGridCtrl.SetSelectedRange(pGridView->iRow , pGridView->iColumn,pGridView->iRow , pGridView->iColumn);
+				m_wndGridCtrl.SetFocusCell(pGridView->iRow , pGridView->iColumn);
+				return TRUE;
+			}
+
+			pBusCombo->m_sFromBus = sFromBus;
+		}
+
+		return TRUE;
+	}
+	
+	return CView::OnNotify(wParam, lParam, pResult);
 }

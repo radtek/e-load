@@ -1,0 +1,27 @@
+[Load]
+General
+Type
+Panel
+Rating
+Load
+Characteristic
+Remark
+[Cable]
+Voltage Drop
+Cable Route
+Derating Factor
+Power Cable Setting
+Control Cable
+Cable List
+[Motor]
+Motor Specification
+Motor HUB
+Motor MFR
+[Location]
+Location
+Drawing
+PO
+[Panel]
+Circuit Breaker
+MCCB
+Load Summary

@@ -2,10 +2,10 @@
 
 ///#include <aDrawCtrl/inc/IsDrawEditor.h>
 #include "BusToBusDoc.h"
-///#include "BusToBusRelationFactory.h"
-///#include "BusToBusEditor.h"
 #include <gui/gridctrl/GridCtrl.h>
 #include <gui/gridctrl/GridCellCombo.h>
+
+#include "MFCButtonEx.h"
 
 // CBusToBusView view
 
@@ -26,6 +26,7 @@ class CGridCellBusCombo : public CGridCellCombo
 public:
 	CGridCellBusCombo();
 
+	CString m_sFromBus;	/// 2012.07.10 added by humkyung
 	// editing cells
 private:
 	//! 2011.02.08 added by HumKyung
@@ -57,7 +58,8 @@ protected:
 
 	//! 2011.01.05 - added by HumKyung
 	CGridCtrl m_wndGridCtrl;
-	CMFCButton m_wndAddButton , m_wndDeleteButton , m_wndSaveButton;
+	CMFCButton m_wndAddButton , m_wndDeleteButton;
+	CMFCButtonEx m_wndSaveButton;
 public:
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	virtual void OnInitialUpdate();
@@ -66,4 +68,6 @@ public:
 	afx_msg void OnBnClickedDelete();
 	afx_msg void OnBnClickedSave();
 	afx_msg void OnDestroy();
+protected:
+	virtual BOOL OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult);
 };

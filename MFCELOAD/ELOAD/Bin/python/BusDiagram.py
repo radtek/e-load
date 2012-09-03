@@ -87,6 +87,20 @@ def PyGetPDBNameConnectedToBus(bus):
 
 	return res
 
+# brief		connection이 이미 그려졌는지 검사한다.
+# author	humkyung
+# date		2012-09-03 16:31:12 
+# return	bool
+def IsAlreadyDrawn(connection , drawed_bus_list):
+	bFound = False
+
+	for drawn in drawed_bus_list:
+		if drawn == connection:
+			bFound = True
+			break
+	
+	return bFound
+
 # brief		bus에 연결된 diagram을 그린다.
 # author	BHK
 # date		2009-05-29 10:57:46
@@ -102,16 +116,10 @@ def PyGenerateSubDiagramOf(contents , bus , drawed_bus_list):
 			# UPS/DC에 연결된 BUS를 그린다.
 			ConnectedBusID = ELoadApp.GetELoadItemProp('UPSDC' , upsdc , 'To' , 'Bus ID')
 			if (ConnectedBusID != ''):
-				bFound = False
-				for upsdcbus in drawed_bus_list:
-					if upsdcbus == ConnectedBusID:
-						bFound = True
-						break
-				# 이미 그렸다면 생략.
-				if bFound == False:
+				if False == IsAlreadyDrawn(upsdc + '->' + ConnectedBusID , drawed_bus_list):
 					contents = contents + '"' + str(ConnectedBusID) + '"[label="'+ str(ConnectedBusID) + '",shape=box];' + '\n'
 					contents = contents + '"' + str(upsdc) + '"'+ '->' + '"' + str(ConnectedBusID) + '"' + '\n'
-					drawed_bus_list.append(str(ConnectedBusID))
+					drawed_bus_list.append(str(upsdc) + '->' + str(ConnectedBusID))
 
 					contents = PyGenerateSubDiagramOf(contents , ConnectedBusID , drawed_bus_list)
 				
@@ -121,25 +129,29 @@ def PyGenerateSubDiagramOf(contents , bus , drawed_bus_list):
 		for tr in TrNameList:
 			pos = tr.find('DEL ')
 			if 0 != pos:
-				contents = contents + '"' + str(tr) +'"[label = "' + str(tr) + '",style=filled,fillcolor=yellow,shape=ellipse];' + '\n'
-				contents = contents + '"' + str(bus) + '"'+ '->' + '"' + str(tr) + '"' + '\n'
+				if False == IsAlreadyDrawn(bus + '->' + tr , drawed_bus_list):
+					contents = contents + '"' + str(tr) +'"[label = "' + str(tr) + '",style=filled,fillcolor=yellow,shape=ellipse];' + '\n'
+					contents = contents + '"' + str(bus) + '"'+ '->' + '"' + str(tr) + '"' + '\n'
+					drawed_bus_list.append(str(bus) + '->' + str(tr))
 
 				ConnectedBusID = ELoadApp.GetTransformerProp(tr , 'To' , 'Bus Id')
 				if ConnectedBusID != '':
-					contents = contents + '"' + str(ConnectedBusID) + '"[label="'+ str(ConnectedBusID) + '",shape=box];' + '\n'
-					contents = contents + '"' + str(tr) + '"'+ '->' + '"' + str(ConnectedBusID) + '"' + '\n'
-					drawed_bus_list.append(str(ConnectedBusID))
+					if False == IsAlreadyDrawn(tr + '->' + ConnectedBusID , drawed_bus_list):
+						contents = contents + '"' + str(ConnectedBusID) + '"[label="'+ str(ConnectedBusID) + '",shape=box];' + '\n'
+						contents = contents + '"' + str(tr) + '"'+ '->' + '"' + str(ConnectedBusID) + '"' + '\n'
+						drawed_bus_list.append(str(tr) + '->' + str(ConnectedBusID))
 
-					contents = PyGenerateSubDiagramOf(contents , ConnectedBusID , drawed_bus_list)
+						contents = PyGenerateSubDiagramOf(contents , ConnectedBusID , drawed_bus_list)
 			else:
 				# don't display virtual transformer. display directly bus to bus. - 2011.01.06 added by HumKyung
 				ConnectedBusID = ELoadApp.GetTransformerProp(tr , 'To' , 'Bus Id')
 				if ConnectedBusID != '':
-					contents = contents + '"' + str(ConnectedBusID) + '"[label="'+ str(ConnectedBusID) + '",shape=box];' + '\n'
-					contents = contents + '"' + str(bus) + '"'+ '->' + '"' + str(ConnectedBusID) + '"' + '\n'
-					drawed_bus_list.append(str(ConnectedBusID))
+					if False == IsAlreadyDrawn(bus + '->' + ConnectedBusID , drawed_bus_list):
+						contents = contents + '"' + str(ConnectedBusID) + '"[label="'+ str(ConnectedBusID) + '",shape=box];' + '\n'
+						contents = contents + '"' + str(bus) + '"'+ '->' + '"' + str(ConnectedBusID) + '"' + '\n'
+						drawed_bus_list.append(str(bus) + '->' + str(ConnectedBusID))
 
-					contents = PyGenerateSubDiagramOf(contents , ConnectedBusID , drawed_bus_list)
+						contents = PyGenerateSubDiagramOf(contents , ConnectedBusID , drawed_bus_list)
 	
 	# Bus에 연결된 PDB BUS들을 구한다.
 	PDBBusNameList = PyGetPDBNameConnectedToBus(bus)
@@ -148,7 +160,7 @@ def PyGenerateSubDiagramOf(contents , bus , drawed_bus_list):
 			contents = contents + '"' + str(pdb) +'"[label = "' + str(pdb) + '",shape=box];' + '\n'
 			contents = contents + '"' + str(bus) + '"'+ '->' + '"' + str(pdb) + '"' + '\n'
 
-			drawed_bus_list.append(str(pdb))
+			drawed_bus_list.append(str(bus) + '->' + str(pdb))
 
 			contents = PyGenerateSubDiagramOf(contents , pdb , drawed_bus_list)
 

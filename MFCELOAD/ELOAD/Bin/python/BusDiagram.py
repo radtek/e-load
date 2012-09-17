@@ -110,8 +110,10 @@ def PyGenerateSubDiagramOf(contents , bus , drawed_bus_list):
 	UPSDCNameList = PyGetUPSDCNameConnectedToBus(bus)
 	if type(UPSDCNameList) == type([]) and len(UPSDCNameList) > 0:
 		for upsdc in UPSDCNameList:
-			contents = contents + '"' + str(upsdc) +'"[label = "' + str(upsdc) + '",style=filled,fillcolor=green,shape=doubleoctagon];' + '\n'
-			contents = contents + '"' + str(bus) + '"'+ '->' + '"' + str(upsdc) + '"' + '\n'
+			if False == IsAlreadyDrawn(bus + '->' + upsdc , drawed_bus_list):
+				contents = contents + '"' + str(upsdc) +'"[label = "' + str(upsdc) + '",style=filled,fillcolor=green,shape=doubleoctagon];' + '\n'
+				contents = contents + '"' + str(bus) + '"'+ '->' + '"' + str(upsdc) + '"' + '\n'
+				drawed_bus_list.append(str(bus) + '->' + str(upsdc))
 
 			# UPS/DC에 연결된 BUS를 그린다.
 			ConnectedBusID = ELoadApp.GetELoadItemProp('UPSDC' , upsdc , 'To' , 'Bus ID')
@@ -157,12 +159,12 @@ def PyGenerateSubDiagramOf(contents , bus , drawed_bus_list):
 	PDBBusNameList = PyGetPDBNameConnectedToBus(bus)
 	if type(PDBBusNameList) == type([]) and len(PDBBusNameList) > 0:
 		for pdb in PDBBusNameList:
-			contents = contents + '"' + str(pdb) +'"[label = "' + str(pdb) + '",shape=box];' + '\n'
-			contents = contents + '"' + str(bus) + '"'+ '->' + '"' + str(pdb) + '"' + '\n'
+			if False == IsAlreadyDrawn(bus + '->' + pdb , drawed_bus_list):
+				contents = contents + '"' + str(pdb) +'"[label = "' + str(pdb) + '",shape=box];' + '\n'
+				contents = contents + '"' + str(bus) + '"'+ '->' + '"' + str(pdb) + '"' + '\n'
+				drawed_bus_list.append(str(bus) + '->' + str(pdb))
 
-			drawed_bus_list.append(str(bus) + '->' + str(pdb))
-
-			contents = PyGenerateSubDiagramOf(contents , pdb , drawed_bus_list)
+				contents = PyGenerateSubDiagramOf(contents , pdb , drawed_bus_list)
 
 	return contents
 

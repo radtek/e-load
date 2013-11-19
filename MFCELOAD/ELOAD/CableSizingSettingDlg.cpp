@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "ELOAD.h"
 #include "CableSizingSettingDlg.h"
-#include <util/excel9/ExcelAutomation.h>
+#include <istools/inc/util/excel9/ExcelAutomation.h>
 #include "ELoadDocData.h"
 #include <util/ado/SQLFile.h>
 

@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "ELOAD.h"
 #include "ConduitTableDlg.h"
-#include <util/excel9/ExcelAutomation.h>
+#include <istools/inc/util/excel9/ExcelAutomation.h>
 #include "ELoadDocData.h"
 
 #define	T_CONDUIT_LIST	"T_CONDUIT_LIST"

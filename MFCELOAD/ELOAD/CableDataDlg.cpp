@@ -12,7 +12,7 @@
 #include "stdafx.h"
 #include "ELOAD.h"
 #include "CableDataDlg.h"
-#include <util/excel9/ExcelAutomation.h>
+#include <istools/inc/util/excel9/ExcelAutomation.h>
 #include "ELoadDocData.h"
 #include "Tables/CableDataTable.h"
 

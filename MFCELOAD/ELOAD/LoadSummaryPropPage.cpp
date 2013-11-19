@@ -7,7 +7,7 @@
 #include "LoadSummaryPropPage.h"
 #include "Tables/ProjectSettingTable.h"
 #include "ELoadDocData.h"
-#include <util/excel9/ExcelAutomation.h>
+#include <istools/inc/util/excel9/ExcelAutomation.h>
 
 
 static const string __FIELD_NAMES__[] = 

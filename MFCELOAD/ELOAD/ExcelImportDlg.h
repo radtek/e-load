@@ -1,7 +1,7 @@
 #pragma once
 #include "afxwin.h"
 #include <util/ado/ADODB.h>
-#include <util/excel9/ExcelAutomation.h>
+#include <istools/inc/util/excel9/ExcelAutomation.h>
 #include <gui/gridctrl/GridCtrl.h>
 #include "GridCtrlEx.h"
 #include <vector>

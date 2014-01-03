@@ -131,8 +131,10 @@ BOOL CELOADApp::InitInstance()
 	//! terminate if can't connect internet.
 	//! 보안과 버젼을 확인하여 새로운 버젼이 나왔으면 다운로드하여 설치하도록 한다.
 #ifdef	NDEBUG
+#ifndef	NOCHECK
 	const int res = AutoUpdate();
 	if((RETURN_ERROR == res) || (RETURN_SECURITYERROR == res)) return FALSE;
+#endif
 #endif
 
 	CLoginDlg dlg;
@@ -171,7 +173,7 @@ BOOL CELOADApp::InitInstance()
 	// Create a new appender with the created layout
 	// Here we create a 'appender' to output to a FILE, instead of the 'console'.
 	// Here it outputs the logs to a file 'log.txt'
-	char szBuf[MAX_PATH + 1] = {'\0',};
+	TCHAR szBuf[MAX_PATH + 1] = {'\0',};
 	GetModuleFileName(NULL , szBuf , MAX_PATH);
 	string rExecFolder(szBuf);
 	const string::size_type at = rExecFolder.rfind("\\");
@@ -184,7 +186,7 @@ BOOL CELOADApp::InitInstance()
 	appender->setName(_T("ELoadAppender"));
 
 	// Create a new Logger with the name: 'ELoad'
-	mylogger = Logger::getLogger("ELoad");
+	mylogger = Logger::getLogger( _T("ELoad") );
 
 	// Set Level for the new logger created
 
@@ -203,7 +205,7 @@ BOOL CELOADApp::InitInstance()
 	// such as the name of your company or organization
 */
 	//! set timezone to ROK because of log4cxx-0.9.7 changes timezone.
-	putenv("TZ=ROK");
+	putenv( _T("TZ=ROK") );
 	tzset();
 
 	///install_crashrpt();
@@ -301,7 +303,7 @@ BOOL CELOADApp::InitInstance()
 */
 CBusGroupItem* CELOADApp::FindBusGroup(const CString& rBusGroupName)
 {
-        CELoadDocData& docData    = CELoadDocData::GetInstance();
+	CELoadDocData& docData    = CELoadDocData::GetInstance();
 	list<CELoadItem*> BusGroupList;
 	docData.GetELoadItemListOf(BusGroupList , CBusGroupItem::TypeString());
 	if(!BusGroupList.empty())
@@ -315,7 +317,7 @@ CBusGroupItem* CELOADApp::FindBusGroup(const CString& rBusGroupName)
 		}
 	}
 
-        return NULL;
+	return NULL;
 }
 
 /**

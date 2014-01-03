@@ -46,7 +46,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\..\Is_Tools\inc;..\..\..\Is_Tools\inc\gui;&quot;..\..\log4cxx-0.9.7\include&quot;;&quot;c:\Program Files (x86)\boost\boost_1_47&quot;;C:\Python26\include;&quot;C:\Program Files (x86)\FarPoint Technologies\Spread70\Include&quot;;..\..\..\shared;..\..\..\shared\3rdparty\CxImage600\cximage"
+				AdditionalIncludeDirectories="..\..\..\Is_Tools\inc;..\..\..\Is_Tools\inc\gui;&quot;..\..\log4cxx-0.9.7\include&quot;;&quot;c:\Program Files (x86)\boost\boost_1_47&quot;;C:\Python26\include;&quot;C:\Program Files (x86)\FarPoint Technologies\Spread70\Include&quot;;..\..\..\shared;..\..\..\shared\istools;..\..\..\shared\3rdparty\CxImage600\cximage"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -69,10 +69,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="IsGUI2008D.lib IsUtil2008D.lib ..\..\log4cxx-0.9.7\lib\log4cxxd.lib .\Bin\cximagecrt.lib Zip.lib"
+				AdditionalDependencies="isgui_vc90_debug.lib isutil_vc90_debug.lib ..\..\log4cxx-0.9.7\lib\log4cxxd.lib .\Bin\cximagecrt.lib Zip.lib"
 				OutputFile=".\Bin\$(ProjectName)D.exe"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="..\..\..\shared\lib;..\..\..\shared\istools\lib;..\..\..\Is_Tools\lib;&quot;c:\Program Files (x86)\boost\boost_1_47\lib&quot;;C:\Python26\Libs;&quot;C:\Program Files (x86)\FarPoint Technologies\Spread70\LIB&quot;"
+				AdditionalLibraryDirectories="..\..\..\Is_Tools\lib;&quot;c:\Program Files (x86)\boost\boost_1_47\lib&quot;;C:\Python26\Libs;&quot;C:\Program Files (x86)\FarPoint Technologies\Spread70\LIB&quot;;..\..\..\shared\lib;..\..\..\shared\istools\lib\vc90"
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -131,7 +131,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="..\..\..\Is_Tools\inc;..\..\..\Is_Tools\inc\gui;&quot;..\..\log4cxx-0.9.7\include&quot;;&quot;c:\Program Files (x86)\boost\boost_1_47&quot;;C:\Python26\include;&quot;C:\Program Files (x86)\FarPoint Technologies\Spread70\Include&quot;;..\..\..\shared;..\..\..\shared\3rdparty\CxImage600\cximage"
+				AdditionalIncludeDirectories="..\..\..\Is_Tools\inc;..\..\..\Is_Tools\inc\gui;&quot;..\..\log4cxx-0.9.7\include&quot;;&quot;c:\Program Files (x86)\boost\boost_1_47&quot;;C:\Python26\include;&quot;C:\Program Files (x86)\FarPoint Technologies\Spread70\Include&quot;;..\..\..\shared;..\..\..\shared\istools;..\..\..\shared\3rdparty\CxImage600\cximage"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG"
 				MinimalRebuild="false"
 				RuntimeLibrary="2"
@@ -2178,11 +2178,11 @@
 				>
 			</File>
 			<File
-				RelativePath="C:\Program Files\BCGSoft\BCGControlBarPro\Examples\BCGPVisualStudioGUIDemo\res\menuimages_hc.bmp"
+				RelativePath=".\res\menuimages_hc.bmp"
 				>
 			</File>
 			<File
-				RelativePath=".\res\menuimages_hc.bmp"
+				RelativePath="C:\Program Files\BCGSoft\BCGControlBarPro\Examples\BCGPVisualStudioGUIDemo\res\menuimages_hc.bmp"
 				>
 			</File>
 			<File

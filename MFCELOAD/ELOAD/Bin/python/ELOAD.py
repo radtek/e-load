@@ -818,7 +818,7 @@ def WriteLoadSummaryToDataFileA(args):
 
 				if ('SUBBUS' != LoadCategory):
 					RATED_VOLTS = ELoadApp.GetLoadProp(loadname, 'Rating','Rated Voltage')
-					busfile.write(('%.2f' % SAFE_FLOAT(RATED_VOLTS)) + '\t')
+					busfile.write(RATED_VOLTS + '\t')
 
 					Rating_Capacity = ELoadApp.GetLoadRatingCapacity(loadname)
 					if type(Rating_Capacity) == type(''):

@@ -2,7 +2,7 @@
 !define PRODUCT_NAME "ELOAD"
 !include "VersionNo.nsi"
 !define PRODUCT_PUBLISHER "Daelim (C)"
-!define PRODUCT_WEB_SITE "http://www.Daelim.co.kr"
+!define PRODUCT_WEB_SITE "http://www.9sq.co.kr"
 !define PRODUCT_DIR_REGKEY "Software\${PRODUCT_NAME}"
 !define PRODUCT_UNINST_KEY "Software\${PRODUCT_NAME}\Uninstall"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
@@ -128,9 +128,8 @@ SectionEnd
 
 Section "PROJECT" SEC03
         SectionIn 1
-
-        SetShellVarContext all
-        SetOutPath "$APPDATA\${PRODUCT_NAME}\PROJECT"
+        
+        SetOutPath "$INSTDIR\PROJECT"
         File "Backup\PROJECT\PROJECT.zip"
         
         StrCpy $projectSelected "1"
@@ -165,12 +164,12 @@ Section -Post
   
 #  StrCmp $projectSelected "" no_project
   ; Zip 파일을 Extract한다.
-  IfFileExists "$APPDATA\${PRODUCT_NAME}\PROJECT\PROJECT.zip" 0 +5
-        Delete "$APPDATA\${PRODUCT_NAME}\PROJECT\ELOAD-BACKUP.MDB"
-        Rename "$APPDATA\${PRODUCT_NAME}\PROJECT\ELOAD.MDB" "$APPDATA\${PRODUCT_NAME}\PROJECT\ELOAD-BACKUP.MDB"
-        CopyFiles "$APPDATA\${PRODUCT_NAME}\BACKUP\ELOAD.MDB" "$APPDATA\${PRODUCT_NAME}\PROJECT" ; 2012.09.19 added by humkyung
-        ZipDLL::extractall "$APPDATA\${PRODUCT_NAME}\PROJECT\PROJECT.ZIP" "$APPDATA\${PRODUCT_NAME}\PROJECT\000000"
-        Delete "$APPDATA\${PRODUCT_NAME}\PROJECT\PROJECT.ZIP"
+  IfFileExists $INSTDIR\PROJECT\PROJECT.zip 0 +5
+        Delete "$INSTDIR\PROJECT\ELOAD-BACKUP.MDB"
+        Rename $INSTDIR\PROJECT\ELOAD.MDB $INSTDIR\PROJECT\ELOAD-BACKUP.MDB
+        CopyFiles $INSTDIR\BACKUP\ELOAD.MDB $INSTDIR\PROJECT ; 2012.09.19 added by humkyung
+        ZipDLL::extractall "$INSTDIR\PROJECT\PROJECT.ZIP" "$INSTDIR\PROJECT\000000"
+        Delete "$INSTDIR\PROJECT\PROJECT.ZIP"
 
   ; VC++ 2008 재배포한을 설치한다.
   IfFileExists "$INSTDIR\Temp\vcredist_x86_sp1.exe" 0 no_project

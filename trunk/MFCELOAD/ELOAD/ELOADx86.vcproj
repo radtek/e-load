@@ -2178,11 +2178,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\res\menuimages_hc.bmp"
+				RelativePath="C:\Program Files\BCGSoft\BCGControlBarPro\Examples\BCGPVisualStudioGUIDemo\res\menuimages_hc.bmp"
 				>
 			</File>
 			<File
-				RelativePath="C:\Program Files\BCGSoft\BCGControlBarPro\Examples\BCGPVisualStudioGUIDemo\res\menuimages_hc.bmp"
+				RelativePath=".\res\menuimages_hc.bmp"
 				>
 			</File>
 			<File

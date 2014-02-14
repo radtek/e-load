@@ -47,7 +47,7 @@ Page Components
 ; Language files
 !insertmacro MUI_LANGUAGE "Korean"
 
-BrandingText "Daelim(C)"
+BrandingText "e-LOAD"
 
 ; MUI end ------
 
@@ -162,6 +162,8 @@ Section -Post
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "URLInfoAbout" "${PRODUCT_WEB_SITE}"
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "Publisher" "${PRODUCT_PUBLISHER}"
   
+  WriteIniStr $INSTDIR"\Setting\ELoad.ini" "ELoad" "Server" $INSTDIR\PROJECT ; write server folder path - 2014.02.14 added by humkyung
+  
 #  StrCmp $projectSelected "" no_project
   ; Zip 파일을 Extract한다.
   IfFileExists $INSTDIR\PROJECT\PROJECT.zip 0 +5
@@ -220,6 +222,8 @@ FunctionEnd
 
 ; 언인스톨시~~~
 Section Uninstall
+  SetShellVarContext all
+  
   Delete "$INSTDIR\${PRODUCT_NAME}.url"
   
   UnRegDLL "$INSTDIR\FPSPR70.ocx"
@@ -233,7 +237,7 @@ Section Uninstall
   Delete "$INSTDIR\Backup\*.*"
   RMDir "$INSTDIR\Backup"
 
-  Delete "$INSTDIR\Setting\ELoad.ini"
+;  Delete "$INSTDIR\Setting\ELoad.ini"
   Delete "$INSTDIR\Setting\*.PROP"
   Delete "$INSTDIR\Setting\*.PROP_GROUP"
   Delete "$INSTDIR\Setting\*.ITEM"
@@ -259,7 +263,6 @@ Section Uninstall
   Delete "$SMPROGRAMS\e-LOAD\Website.lnk"
   Delete "$DESKTOP\ELOAD  v${PRODUCT_VERSION}.lnk"
   Delete "$SMPROGRAMS\e-LOAD\e-LOAD v${PRODUCT_VERSION}.lnk"
-
   RMDir "$SMPROGRAMS\e-LOAD"
   RMDir "$INSTDIR"
 

@@ -105,7 +105,6 @@ BOOL CNewProjectDlg::OnInitDialog()
 
 /**
 	@brief	새로운 프로젝트를 생성한다.
-
 	@author	BHK
 */
 void CNewProjectDlg::OnBnClickedButtonNewProject()
@@ -121,7 +120,7 @@ void CNewProjectDlg::OnBnClickedButtonNewProject()
 	}
 
 	CELoadDocData& docData = CELoadDocData::GetInstance();
-	//! 기존의 PROJECT NO와 같은지 비교한다.
+	/// 기존의 PROJECT NO와 같은지 비교한다.
 	for(list<PROJECT_RECORD>::iterator itr = m_ProjectRecordEntry.begin();itr != m_ProjectRecordEntry.end();++itr)
 	{
 		CString rString(itr->rProjectNo.c_str());
@@ -130,7 +129,7 @@ void CNewProjectDlg::OnBnClickedButtonNewProject()
 		{
 			if(ERROR_SUCCESS == RemakeProjectSettingTable(rProjectNo)) 
 			{
-				//!프로젝트 셋팅을 UPTATE 한다.
+				///프로젝트 셋팅을 UPTATE 한다.
 				if(ERROR_SUCCESS == CurProjectUpdate())
 				{
 					DisplayProjectRecord();
@@ -147,7 +146,7 @@ void CNewProjectDlg::OnBnClickedButtonNewProject()
 		}
 	}
 
-	//! 새로운 PROJECT를 등록한다.
+	/// 새로운 PROJECT를 등록한다.
 	if(ERROR_SUCCESS == CreateProject())
 	{
 		//! ELOAD: 새로 생성된 PROJECT 정보를 ProjectRecordEntry에 추가한다.
@@ -226,16 +225,14 @@ int CNewProjectDlg::LoadProjectRecordFromDatabase(void)
 
 /**
 	@brief	TEMPLATE DATABASE를 복사하고 하위 폴드를 생성한다.
-
 	@author	BHK
-
 	@date	?
 */
 int CNewProjectDlg::CreateProject(void)
 {
 	CELoadDocData& docData = CELoadDocData::GetInstance();
 
-	//! ELOAD: ELOAD MDB에 PROJECT 정보를 INSERT한다.
+	/// ELOAD: ELOAD MDB에 PROJECT 정보를 INSERT한다.
 	STRING_T rServerMDB = docData.GetServerMDBFilePath();
 	CADODB adoDB;
 	const STRING_T rProvider = STRING_T(PROVIDER) + _T("Data Source=") + rServerMDB + DB_PASSWORD; 
@@ -255,7 +252,7 @@ int CNewProjectDlg::CreateProject(void)
 		return ERROR_BAD_ENVIRONMENT;
 	}
 
-	//! ELOAD: TEMPLATE MDB를 서버 경로에 Project No 이름으로 복사한다.
+	/// ELOAD: TEMPLATE MDB를 서버 경로에 Project No 이름으로 복사한다.
 	CString rExecPath = GetExecPath();
 	if(_T("\\") != rExecPath.Right(1)) rExecPath += _T("\\");
 
@@ -281,7 +278,7 @@ int CNewProjectDlg::CreateProject(void)
 				{
 					sqlFile.SyncToTable(adoProjectDB , _T("T_PROJECT_SETTING"));
 
-					const CString rSql = _T("INSERT INTO T_PROJECT_SETTING(C_HERTZ) VALUES('") + m_rProjectHertz + _T("')");
+					const CString rSql = _T("UPDATE T_PROJECT_SETTING SET C_HERTZ='") + m_rProjectHertz + _T("'");	/// 2014.03.18 modified by humkyung
 					adoProjectDB.ExecuteQuery(rSql.operator LPCTSTR());
 				}
 			}

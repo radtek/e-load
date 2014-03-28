@@ -474,13 +474,9 @@ void CBusToBusView::OnBnClickedDelete()
 
 /**
 	@brief	call back function
-
 	@author	HumKyung
-
 	@date	2011.01.05
-
 	@param
-
 	@return
 */
 void CBusToBusView::OnBnClickedSave()
@@ -511,13 +507,13 @@ void CBusToBusView::OnBnClickedSave()
 				pTrItem->prop()->SetValue(_T("From") , _T("Bus Id") , sFromBus.operator LPCSTR());
 				pTrItem->prop()->SetValue(_T("To") , _T("Bus Id") , sToBus.operator LPCSTR());
 
-				//! remove transformer item from list
+				/// remove transformer item from list
 				list<CELoadItem*>::iterator where = find(TrItemList.begin() , TrItemList.end() , pTrItem);
 				if(where != TrItemList.end()) TrItemList.erase(where);
 			}
 			else
 			{
-				//! create a tranformer and insert a transformer record.
+				/// create a tranformer and insert a transformer record.
 				pTrItem = static_cast<CTransformerItem*>(docData.CreateELoadItemOf(CTransformerItem::TypeString()));
 				if(pTrItem)
 				{
@@ -555,13 +551,13 @@ void CBusToBusView::OnBnClickedSave()
 			if(pTrItem) pTrItem->SaveData(adoDB , CTransformerItem::TableName());
 		}
 
-		//! delete database record which's item is deleted
+		/// delete database record which's item is deleted
 		for(list<CELoadItem*>::iterator itr = TrItemList.begin();itr != TrItemList.end();++itr)
 		{
 			CTransformerItem* pTrItem = (CTransformerItem*)(*itr);
 			if(0 != pTrItem->GetName().find(_T("DEL "))) continue;
 
-			//! delete transformer record from table
+			/// delete transformer record from table
 			const string sSql = _T("DELETE * FROM ") + CTransformerItem::TableName() + _T(" WHERE C_ID='") + string(pTrItem->id()) + _T("'");
 			adoDB.ExecuteQuery(sSql.c_str());
 

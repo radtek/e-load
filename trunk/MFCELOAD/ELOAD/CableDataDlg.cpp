@@ -229,18 +229,14 @@ BOOL CCableDataDlg::OnInitDialog()
 
 /**
 	@brief	CABLE DATA EXCEL FILE을 로딩합니다.
-
 	@author	HumKyung
-
 	@date	????.??.??
-
 	@param
-
 	@return
 */
 void CCableDataDlg::OnBnClickedButtonImport()
 {
-	CFileDialog fileDlg(TRUE, NULL, NULL, OFN_HIDEREADONLY  ,"Excel Files(*.xls)|*.xls|All Files(*.*)|*.*||");
+	CFileDialog fileDlg(TRUE, NULL, NULL, OFN_HIDEREADONLY  ,"Excel Files(*.xls,*.xlsx)|*.xls;*.xlsx|All Files(*.*)|*.*||");
 	if(IDOK == fileDlg.DoModal())
 	{
 		CString rFileName    = fileDlg.GetFileName();
@@ -275,7 +271,7 @@ void CCableDataDlg::OnBnClickedButtonImport()
 			///m_cboCableType.SetCurSel(0);
 			OnCbnSelchangeComboCableType();
 		}
-        }
+	}
 }
 
 /**

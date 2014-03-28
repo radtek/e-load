@@ -128,8 +128,8 @@ BOOL CELOADApp::InitInstance()
 	}
 	AfxEnableControlContainer();
 
-	//! terminate if can't connect internet.
-	//! 보안과 버젼을 확인하여 새로운 버젼이 나왔으면 다운로드하여 설치하도록 한다.
+	/// terminate if can't connect internet.
+	/// 보안과 버젼을 확인하여 새로운 버젼이 나왔으면 다운로드하여 설치하도록 한다.
 #ifdef	NDEBUG
 #ifndef	NOCHECK
 	const int res = AutoUpdate();

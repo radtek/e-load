@@ -34,7 +34,7 @@ CBusView::~CBusView()
 }
 
 BEGIN_MESSAGE_MAP(CBusView, CScrollView)
-        ON_COMMAND(ID_FILE_SAVE, &CBusView::OnFileSave)
+	ON_COMMAND(ID_FILE_SAVE, &CBusView::OnFileSave)
 	ON_WM_ERASEBKGND()
 	ON_WM_RBUTTONDOWN()
 	ON_COMMAND(ID_BUS_DIAGRAM_OPEN, &CBusView::OnBusDiagramOpen)
@@ -246,14 +246,10 @@ void CBusView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 }
 
 /**
-	@brief	PRINT MENU
-
+	@brief	show menu to open bus diagram
 	@author KHS	
-
 	@date 2009-06-03 오후 1:38:02	
-
 	@param	
-
 	@return		
 **/
 void CBusView::OnRButtonDown(UINT nFlags, CPoint point)
@@ -286,7 +282,6 @@ BOOL CBusView::OnPreparePrinting(CPrintInfo* pInfo)
 
 /**
 	@brief  On event from Observer
-
 	@author	BHK
 */
 int CBusView::OnEventFromObserver(CObserver* pObserver , CEventData* pEventData)
@@ -303,7 +298,7 @@ int CBusView::OnEventFromObserver(CObserver* pObserver , CEventData* pEventData)
 			{
 				pDoc->BeginWaitCursor();
 
-				//! BusDiagram을 생성을 시도한다.
+				/// BusDiagram을 생성을 시도한다.
 				///python.CallPyGenerateBusDiagram();
 				///pDoc->ViewBusDiagram(pDoc->GetPathName());
 				pDoc->GenerateBusDiagram(pDoc->GetPathName());

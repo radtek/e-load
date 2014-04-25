@@ -1,3 +1,6 @@
+1.1.3.364: 2014.04.04
+	1. BusToBus 저장않고 종료시 저장 여부 확인 기능 추가
+
 1.1.3.363: 2014.03.24
 	1. 프로젝트 생성시 Voltage 저장 오류 수정
 	2. Cable Data Import File Dialog 확장자에 .xlsx 추가

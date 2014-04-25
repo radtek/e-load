@@ -31,13 +31,9 @@ END_MESSAGE_MAP()
 
 /**
 	@brief	
-
 	@author	HumKyung
-
 	@date	2011.01.05
-
 	@param	lpszPathName
-
 	@return
 */
 BOOL CBusToBusDoc::OnOpenDocument(LPCTSTR lpszPathName)

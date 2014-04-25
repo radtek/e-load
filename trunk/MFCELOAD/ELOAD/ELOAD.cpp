@@ -1245,7 +1245,7 @@ int CELOADApp::AddELoadDocTemplate(void)
 	if (!pDocTemplate) return FALSE;
 	AddDocTemplate(pDocTemplate);
 
-	//! BUS TO BUS VIEW - 2010.12.23 - added by HumKyung
+	/// BUS TO BUS VIEW - 2010.12.23 - added by HumKyung
 	pDocTemplate = new CMultiDocTemplate(IDS_BUS_TO_BUS_TYPE,
 		RUNTIME_CLASS(CBusToBusDoc),
 		RUNTIME_CLASS(CChildFrame), // custom MDI child frame

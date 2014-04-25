@@ -313,7 +313,7 @@ void CBusToBusView::OnInitialUpdate()
 
 			CELoadDocData& docData = CELoadDocData::GetInstance();
 			CBusToBusDoc* pDoc = (CBusToBusDoc*)GetDocument();
-			//! create bus to bus relations
+			/// create bus to bus relations
 			list<CELoadItem*> TransformerItemList;
 			docData.GetELoadItemListOf(TransformerItemList , CTransformerItem::TypeString());
 			for(list<CELoadItem*>::iterator itr = TransformerItemList.begin();itr != TransformerItemList.end();++itr)
@@ -388,13 +388,9 @@ void CBusToBusView::OnContextMenu(CWnd* pWnd, CPoint point)
 
 /**
 	@brief	callback function
-
 	@author	HumKyung
-
 	@date	2011.01.05
-
 	@param
-
 	@return
 */
 void CBusToBusView::OnBnClickedAdd()
@@ -414,18 +410,8 @@ void CBusToBusView::OnBnClickedAdd()
 		if(pCell) pCell->SetStyle(CBS_DROPDOWNLIST);
 
 		m_wndGridCtrl.AutoSizeRows();
-		/*
-		if(m_wndGridCtrl.GetRowCount() > 2)
-		{
-			///m_wndGridCtrl.AutoSize();
-			//! 2011.01.06 - added by HumKyung
-			const static int span = 10;
-			int iColumnWidth = m_wndGridCtrl.GetColumnWidth(1);
-			m_wndGridCtrl.SetColumnWidth(1 , iColumnWidth + span);
-			iColumnWidth = m_wndGridCtrl.GetColumnWidth(2);
-			m_wndGridCtrl.SetColumnWidth(2 , iColumnWidth + span);
-		}
-		*/
+
+		GetDocument()->SetModifiedFlag();	/// 2014.04.04 added by humkyung
 	}
 }
 
@@ -468,6 +454,8 @@ void CBusToBusView::OnBnClickedDelete()
 			}
 
 			m_wndGridCtrl.RedrawWindow();
+
+			GetDocument()->SetModifiedFlag();	/// 2014.04.04 added by humkyung
 		}
 	}
 }
@@ -483,7 +471,7 @@ void CBusToBusView::OnBnClickedSave()
 {
 	CELoadDocData& docData = CELoadDocData::GetInstance();
 	const STRING_T sProjectMDBFilePath = docData.GetProjectMDBFilePath();
-	//! MDB CONNECT
+	/// MDB CONNECT
 	CADODB adoDB;
 	const STRING_T sDBPath = STRING_T(PROVIDER) + _T("Data Source=") + sProjectMDBFilePath  + DB_PASSWORD;
 	if(TRUE == adoDB.DBConnect(sDBPath))
@@ -565,6 +553,7 @@ void CBusToBusView::OnBnClickedSave()
 		}
 
 		adoDB.DBDisConnect();
+		GetDocument()->SetModifiedFlag(FALSE);	/// 2014.04.04 added by humkyung
 	}
 
 	CELOADApp* pApp = (CELOADApp*)AfxGetApp();
@@ -575,13 +564,9 @@ void CBusToBusView::OnBnClickedSave()
 
 /**
 	@brief	store view's width
-
 	@author	HumKyung
-
 	@date	2011.01.27
-
 	@param
-
 	@return
 */
 void CBusToBusView::OnDestroy()
@@ -595,6 +580,8 @@ void CBusToBusView::OnDestroy()
 
 	const CString sIniFilePath = GetExecPath() + _T("Setting\\ELoad.ini");
 	WritePrivateProfileString(_T("ELoad") , _T("BusToBus_Width") , sWidth , sIniFilePath);
+
+	GetDocument()->OnSaveDocument(NULL);
 
 	CView::OnDestroy();
 }
@@ -633,6 +620,8 @@ BOOL CBusToBusView::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult)
 			}
 
 			pBusCombo->m_sFromBus = sFromBus;
+
+			GetDocument()->SetModifiedFlag(TRUE);
 		}
 
 		return TRUE;

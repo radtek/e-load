@@ -56,7 +56,7 @@ public:
 protected:
 	DECLARE_MESSAGE_MAP()
 
-	//! 2011.01.05 - added by HumKyung
+	/// 2011.01.05 - added by HumKyung
 	CGridCtrl m_wndGridCtrl;
 	CMFCButton m_wndAddButton , m_wndDeleteButton;
 	CMFCButtonEx m_wndSaveButton;

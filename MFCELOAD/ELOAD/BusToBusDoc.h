@@ -26,4 +26,5 @@ protected:
 	virtual BOOL OnOpenDocument(LPCTSTR lpszPathName);
 
 	DECLARE_MESSAGE_MAP()
+public:
 };

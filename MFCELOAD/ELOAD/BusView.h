@@ -23,7 +23,7 @@ public:
 protected:
 	DECLARE_MESSAGE_MAP()
 public:
-        afx_msg void OnFileSave();
+	afx_msg void OnFileSave();
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 protected:
 	virtual void OnUpdate(CView* /*pSender*/, LPARAM /*lHint*/, CObject* /*pHint*/);

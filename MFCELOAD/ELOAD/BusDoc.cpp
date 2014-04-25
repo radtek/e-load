@@ -70,7 +70,6 @@ void CBusDoc::Serialize(CArchive& ar)
 {
 	if (ar.IsStoring())
 	{
-		// TODO: add storing code here
 	}
 	else
 	{
@@ -81,15 +80,28 @@ void CBusDoc::Serialize(CArchive& ar)
 
 
 // CBusDoc commands
-
 BOOL CBusDoc::OnSaveDocument(LPCTSTR lpszPathName)
 {
-	// TODO: Add your specialized code here and/or call the base class
 	CELOADApp* pApp = (CELOADApp*)AfxGetApp();
 
+	if(IsModified())
+	{
+		/// save document - 2014.04.04 added by humkyung
+		POSITION pos = GetFirstViewPosition();
+		while(pos)
+		{
+			CView* pView = this->GetNextView(pos);
+			if(pView->IsKindOf(RUNTIME_CLASS(CBusToBusView)))
+			{
+				CBusToBusView* pBusToBusView = (CBusToBusView*)pView;
+				pBusToBusView->OnBnClickedSave();
+			}
+		}
+		SetModifiedFlag(FALSE);
+		/// up to here
+	}
+
 	return TRUE;
-	///pApp->Save
-	///return CDocument::OnSaveDocument(lpszPathName);
 }
 
 typedef struct THREADPARAM

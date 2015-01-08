@@ -840,10 +840,21 @@ int CELOADApp::AutoUpdate(void)
 	if(hModule)
 	{
 		const CString rAutoUpIniFilePath = rExecPath + _T("AutoUp.ini");
+		CString sUrl(_T("http://172.16.9.206/DownLoad/ELOAD/updateinfo.xml"));
+		WritePrivateProfileString(_T("UPDATEINFO") , _T("url") , sUrl , rAutoUpIniFilePath);
 		WritePrivateProfileString(_T("SECURITY") , _T("CODE") , rMACaddress , rAutoUpIniFilePath);
 
 		CheckForUpdateFunc pfCheckForUpdate = (CheckForUpdateFunc)GetProcAddress(hModule , _T("CheckForUpdate"));
 		res = pfCheckForUpdate(rAutoUpIniFilePath);
+		if(RETURN_ERROR == res)
+		{
+			/// try to connect by using internal IP - 2015.01.06 added by humkyung
+			sUrl = _T("http://203.226.5.86/DownLoad/ELOAD/updateinfo.xml");
+			WritePrivateProfileString(_T("UPDATEINFO") , _T("url") , sUrl , rAutoUpIniFilePath);
+			res = pfCheckForUpdate(rAutoUpIniFilePath);
+			/// up to here
+		}
+		
 		if(RETURN_ERROR == res)
 		{
 			AfxMessageBox(_T("Connection Error."));

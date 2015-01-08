@@ -20,8 +20,7 @@ namespace Server
 		{
 			InitializeComponent();
 
-			textURLBox.Text = "http://203.226.5.86/DownLoad/ELOAD/updateinfo.xml";
-			///textURLBox.Text = "http://www.solutionware.co.kr/Projects/IDMS/users.xml";
+			textURLBox.Text = "http://172.16.9.206/DownLoad/ELOAD/updateinfo.xml";
 			listUser.Columns.Add("이름");
 			listUser.Columns.Add("물리 주소");
 			listUser.Columns[0].Width = 150;
@@ -37,7 +36,7 @@ namespace Server
 
 		private void buttonGet_Click(object sender, EventArgs e)
 		{
-			if ("" != textURLBox.Text)
+			if (!string.IsNullOrEmpty(textURLBox.Text))
 			{
 				// Removes all items in the list.
 				for (int i = listUser.Items.Count - 1; i >= 0; --i)
@@ -47,44 +46,101 @@ namespace Server
 
 				string rPrevName = "";
 				ListViewItem listItem = new ListViewItem();
-				XmlTextReader tr = new XmlTextReader(textURLBox.Text);
-				while (tr.Read())
+				try
 				{
-					if (tr.NodeType == XmlNodeType.Element)
+					XmlTextReader tr = new XmlTextReader(textURLBox.Text);
+					while (tr.Read())
 					{
-						if (tr.AttributeCount > 0)
+						if (tr.NodeType == XmlNodeType.Element)
 						{
-							for (int i = 0; i < tr.AttributeCount; ++i)
+							if (tr.AttributeCount > 0)
 							{
-								tr.MoveToAttribute(i);
-								if ("USER" == tr.Name)
+								for (int i = 0; i < tr.AttributeCount; ++i)
 								{
-									listItem = listUser.Items.Add(tr.Value);
+									tr.MoveToAttribute(i);
+									if ("USER" == tr.Name)
+									{
+										listItem = listUser.Items.Add(tr.Value);
+									}
 								}
 							}
 						}
-					}
-					else if (tr.NodeType == XmlNodeType.Text)
-					{
-						if ("VERSION" == rPrevName)
+						else if (tr.NodeType == XmlNodeType.Text)
 						{
-							textVersionBox.Text = tr.Value;
+							if ("VERSION" == rPrevName)
+							{
+								textVersionBox.Text = tr.Value;
+							}
+							else if ("INFO" == rPrevName)
+							{
+								///textVersionBox.Text = tr.Value;
+							}
+							else if (rPrevName == "USER")
+							{
+								listItem.SubItems.Add(tr.Value);
+							}
 						}
-						else if ("INFO" == rPrevName)
+						else if (tr.NodeType == XmlNodeType.EndElement)
 						{
-							///textVersionBox.Text = tr.Value;
 						}
-						else if (rPrevName == "USER")
-						{
-							listItem.SubItems.Add(tr.Value);
-						}
+						rPrevName = tr.Name;
 					}
-					else if (tr.NodeType == XmlNodeType.EndElement)
-					{
-					}
-					rPrevName = tr.Name;
+					tr.Close();
+
+					return;
 				}
-				tr.Close();
+				catch (Exception ex)
+				{
+				}
+
+				try
+				{
+					textURLBox.Text = "http://203.226.5.86/DownLoad/ELOAD/updateinfo.xml";
+					XmlTextReader tr = new XmlTextReader(textURLBox.Text);
+					while (tr.Read())
+					{
+						if (tr.NodeType == XmlNodeType.Element)
+						{
+							if (tr.AttributeCount > 0)
+							{
+								for (int i = 0; i < tr.AttributeCount; ++i)
+								{
+									tr.MoveToAttribute(i);
+									if ("USER" == tr.Name)
+									{
+										listItem = listUser.Items.Add(tr.Value);
+									}
+								}
+							}
+						}
+						else if (tr.NodeType == XmlNodeType.Text)
+						{
+							if ("VERSION" == rPrevName)
+							{
+								textVersionBox.Text = tr.Value;
+							}
+							else if ("INFO" == rPrevName)
+							{
+								///textVersionBox.Text = tr.Value;
+							}
+							else if (rPrevName == "USER")
+							{
+								listItem.SubItems.Add(tr.Value);
+							}
+						}
+						else if (tr.NodeType == XmlNodeType.EndElement)
+						{
+						}
+						rPrevName = tr.Name;
+					}
+					tr.Close();
+
+					return;
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
 			}
 			else
 			{

@@ -1,6 +1,6 @@
 import win32com.client
 xl = win32com.client.gencache.EnsureDispatch ('Excel.Application')
-wb = xl.Workbooks.Open('d:\\PROJECT\\SolutionWare\\Projects\\e-LOAD\\MFCELOAD\\ELOAD\\Bin\\python\\PY.XLS')
+wb = xl.Workbooks.Open('F:\\Project\\DooKyoung\\Projects\\e-load\\MFCELOAD\\ELOAD\\Bin\\python\\\PY.XLS')
 ws = wb.ActiveSheet
 xl.Visible = True
 wb.Worksheets('BUS_TEMPLATE').Copy(Before=wb.Worksheets(wb.Worksheets.Count))
